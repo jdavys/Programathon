@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +36,7 @@
  </script>
 
 
-  <div class="jumbotron"></div>
+  
      <div class="container-fluid">
       <div class="row">
         <div class="col-md-push-4 col-xs-6 col-md-3" >
@@ -107,7 +106,6 @@
 	      xfbml      : true,
 	      version    : 'v2.7'
 	    });
-
 	    FB.getLoginStatus(function(response){
 	    	if(response.status==='connected'){
 	    		document.getElementById('status').innerHTML="we are connected";
@@ -117,9 +115,7 @@
 	    		document.getElementById('status').innerHTML="we are not logged in facebook";
 	    	}
 	    });
-
 	  }; 
-
 	  
 	  (function(d, s, id){
 	     var js, fjs = d.getElementsByTagName(s)[0];
@@ -141,7 +137,6 @@
 	    	}
 	    	});
 	    }
-
 	    function getInfo(){
 	    	FB.api('/me',
 	    		   'GET',
@@ -150,7 +145,6 @@
 	    		    	document.getElementById('status').innerHTML = response.id;	
 	    		    });
 	    	}
-
 	</script>
 
 
