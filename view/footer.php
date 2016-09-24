@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <footer class="text-center well">
-                        <p>Programathon desarrollado por <a href=""></a></p>
+                        <p>&copy; Programathon 2016  <a href=""></a></p>
                     </footer>                
                 </div>    
             </div>
