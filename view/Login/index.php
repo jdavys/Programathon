@@ -16,69 +16,79 @@
     
     <script src="https://www.gstatic.com/charts/loader.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/jquery.min.js"><\/script>')</script>
     <script src="assets/js/bootstrap.min.js"></script> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">   </script> 
   </head>
   <body>
 
   <div id="fb-root"></div>
 
-	<script>(function(d, s, id) {
+
+
+	<script>
+
+	(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id)) return;
 	  js = d.createElement(s); js.id = id;
 	  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.7";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
+
+	function cerrar(){
+
+	}
+	
  </script>
-
-
   
      <div class="container-fluid">
       <div class="row">
         <div class="col-md-push-4 col-xs-6 col-md-3" >
-            <form>              
+            <form action="validaUsuario.php" method="POST">              
               <div class="form-group">
                 <label for="nombreComercial">Nombre Comercial:</label>
-                <input type="text" class="form-control" id="nombreComercial">
+                <input type="text" class="form-control" id="nombreComercial" name="nombreComercial"  placeholder="Comercial" maxlength="100" required>
               </div>              
               <div class="form-group">
                 <label for="nombreUsuario">Nombre de usuario</label>
-                <input type="text" class="form-control" id="nombreUsuario">
+                <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" maxlength="50" placeholder="Usuario" required>
               </div>
               <div class="form-group">
-                <div class="dropdown">
-				  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">País
-				  <span class="caret"></span></button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">Costa Rica</a></li>
-				    <li><a href="#">---</a></li>
-				    <li><a href="#">---</a></li>
-				  </ul>
-				</div>
+              	<label for="pais">País</label>
+              	<select id="listaPais" class="form-control" name="listaPais"  placeholder="País">
+              		<?php
+              		     include("conexion.php");
+
+              		     $consultaPais="SELECT * FROM pais";
+              		     $resPais=$conex->query($consultaPais);?>
+              		     <?php while($pais=$resPais->fetch_assoc()){?>
+              		         <option value="<?php echo $pais['Id']; ?>"><?php echo utf8_encode($pais['Nombre']); ?></option>
+              		         <?php }
+              		      mysqli_close($conex);?> 
+              	<select>
               </div>
               <div class="form-group">
                 <label for="nombreUsuario">Contraseña</label>
-                <input type="password" class="form-control" id="contraseña">
+                <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Contraseña" maxlength="10" minlength="8" required>
               </div>
               <div class="row">
               	<div class="col-xs-6 col-sm-6 col-md-3">
               		<button type="submit" class="btn btn-primary">Aceptar</button>	
               	</div>
               	<div class="col-xs-6 col-sm-6 col-md-3">
-              		<button type="submit" class="btn btn-primary">Cancelar</button>	
+              		<button  value="Cancelar"  class="btn btn-primary" onClick="cerrar()"> Cancelar</button>              		
               	</div>
               </div>              
               <div class="row">
                 <div class="col-xs-6 col-sm-6 col-md-12">
 	                 <div class="form-group">
-		               <a class="brand" href="">Olvidé la Contraseña</a> 
+		               <a class="brand" href="mailto:">Olvidé la Contraseña</a> 
 	                 </div>
 	                 <div class="form-group">
-		                 <a class="brand" href="">Registrarse</a> 
+		                 <a class="brand" href="?c=Pyme">Registrarse</button> 
 	                 </div>
                  </div>
                </div>
@@ -98,7 +108,7 @@
     </script>
 
 
-    	<script>
+    <!--<script>
 	  
 	  window.fbAsyncInit = function() {
 	    FB.init({
@@ -145,7 +155,7 @@
 	    		    	document.getElementById('status').innerHTML = response.id;	
 	    		    });
 	    	}
-	</script>
+	</script>-->
 
 
   </body>

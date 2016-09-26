@@ -1,0 +1,40 @@
+{"preguntas":[
+    {"title":"a. \u00bfCalidad del producto o servicio?", "name":"Respuesta01" ,"options":[
+		{"name":"Excelente","value":"5"},
+		{"name":"Bueno(a)","value":"4"},
+		{"name":"Normal","value":"3"},
+		{"name":"Regular","value":"2"},
+		{"name":"Malo","value":"1"}]},
+    {"title":"b. \u00bfTiempo de espera en la atenci\u00f3n?", "name":"Respuesta02" , "options":[
+		{"name":"Excelente","value":"5"},
+		{"name":"Bueno(a)","value":"4"},
+		{"name":"Normal","value":"3"},
+		{"name":"Regular","value":"2"},
+		{"name":"Malo","value":"1"}]},
+	{"title":"c. \u00bfImagen de las instalaciones?", "name":"Respuesta03" , "options":[
+		{"name":"Excelente","value":"5"},
+		{"name":"Bueno(a)","value":"4"},
+		{"name":"Normal","value":"3"},
+		{"name":"Regular","value":"2"},
+		{"name":"Malo","value":"1"}]},
+    {"title":"d. \u00bfDisponibilidad de producto o servicio solicitado?", "name":"Respuesta04" , "options":[
+		{"name":"Excelente","value":"5"},
+		{"name":"Bueno(a)","value":"4"},
+		{"name":"Normal","value":"3"},
+		{"name":"Regular","value":"2"},
+		{"name":"Malo","value":"1"}]},
+    {"title":"e. \u00bfAtenci\u00f3n del personal?", "name":"Respuesta05" , "options":[
+		{"name":"Excelente","value":"5"},
+		{"name":"Bueno(a)","value":"4"},
+		{"name":"Normal","value":"3"},
+		{"name":"Regular","value":"2"},
+		{"name":"Malo","value":"1"}]},
+	{"title":"f. \u00bfA qu\u00e9 grupo de edad pertenece?", "name":"RangoEdad" , "options":[
+		{"name":"12-17","value":"1"},
+		{"name":"18-33","value":"2"},
+		{"name":"34-45","value":"3"},
+		{"name":"46-55","value":"4"},
+		{"name":"56-64","value":"5"},
+		{"name":"65-73","value":"6"},
+		{"name":"74+","value":"7"}]}
+]}

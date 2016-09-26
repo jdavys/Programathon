@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Grafico</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="https://www.gstatic.com/charts/loader.js"></script> 
+	  <script src="../assets/js/utils.js"></script>
+	  
+
+
+	  <div id="fb-root"></div>
+<script>
+var rows = [];
+
+var config = new Configuration('Votacion por Genero', 500,400);
+      
+    var col1 = new Col('string', 'Genero');
+    var col2 = new Col('number', 'Cantidad');  
+    var arrayCol= [col1,col2];
+
+	function getDataGenero(){
+   var res = [];
+   var item = [];
+		$.ajax({
+					url: "PanelMetrica/cargaMetricaGenero.php",
+					type: "POST",
+					success:function(data){
+						res = data.split("*");
+            for(var i = 0; i < res.length-1; i++){
+              
+              item = res[i].split(",");
+              rows.push([item[0]+'', Number(item[1])]);
+            }
+            
+            google.charts.setOnLoadCallback(function(){ drawChart('chart_div',rows,config,arrayCol) }); 
+					},
+          error:function(data){
+            alert("Hola");
+          }               
+			}) 
+	}
+	
+	getDataGenero();
+
+
+  var rows2 = [];
+
+var config2 = new Configuration('Votacion por Genero', 500,400);
+      
+    var col12 = new Col('string', 'Genero');
+    var col22 = new Col('number', 'Cantidad');  
+    var arrayCol2= [col12,col22];
+
+  function getDataEdad(){
+   var res2 = [];
+   var item2 = [];
+    $.ajax({
+          url: "PanelMetrica/cargaMetricaGenero.php",
+          type: "POST",
+          success:function(data){
+            res2 = data.split("*");
+            for(var i = 0; i < res2.length-1; i++){
+              
+              item2 = res2[i].split(",");
+              rows2.push([item2[0]+'', Number(item2[1])]);
+            }
+            
+            google.charts.setOnLoadCallback(function(){ drawChart('chart_div1',rows2,config2,arrayCol2) }); 
+          },
+          error:function(data){
+            alert("Hola");
+          }               
+      }) 
+  }
+  
+  getDataGenero();
+
+	
+		  
+		
+						 
+         
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+
+	  
+   </head>
+   <body>
+   <div class="jumbotron text-center">
+			<p>La voz del cliente</p>
+		</div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Example Chart 1</h2>
+            <div id="chart_div"></div>
+          </div>
+          <div class="col-md-4">
+            <h2>Example Chart 2</h2>
+            <div id="chart_div1"></div>
+         </div>
+          <div class="col-md-4">
+            <h2>Example Chart 3</h2>
+            <div id="chart_div2"></div>
+          </div>
+      </div>    
+        <hr>
+        <footer>
+          <p>&copy; 2016 Gigathron, Inc.</p>
+        </footer>
+      </div> 
+   </body>
+</html>

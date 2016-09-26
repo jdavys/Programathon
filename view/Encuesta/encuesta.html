@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>.transparent-style{ background-color: #999999; opacity: .80; height: 400px;   } </style>
+<style>.no-tran{ color: #000000; opacity: .99;   } </style>
+<style>.no-tran2{ color: #000066; opacity: 20; } </style>
+<style>.transparent-style2{
+ background-color: #006400; opacity: .80; 
+ padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-color: #fff;
+}</style>
+   <head>
+      <title>Encuesta</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	  <script src="../assets/js/utils.js"></script>
+      <script type="text/javascript">
+		$(function() {
+            lee_json();
+        })
+      </script>
+   </head>
+
+   <body style="background-color:#000000">
+   <table height="40px"><tr><td></tr></td></table>
+   <center>
+    <table>
+    <tr><td>
+      <div class="container" >
+         <form class="transparent-style" width="600px">
+            <div id="accordion1">
+               <div class="panel panel-default">
+                  <div class="transparent-style2">            
+                        <a data-toggle="collapse" data-parent="#accordion2" href="#collapse1">
+                           <font color="#FF3300" size="14" >Encuesta: La Voz del cliente</font>
+                        </a>                  
+                  </div>
+                     <div class="panel-body" >
+                        <div class="row">
+                           
+                        </div>
+                     </div>
+                  
+               </div>
+            </div>
+      
+      <button type="submit" class="btn btn-default" style="background-color:#FF3300">Votar</button>
+      </form>
+      </div>
+      </tr></td>
+   </table></center>
+   </body>
+</html>

@@ -1,7 +1,7 @@
 <?php
 
 
-class GestorModel
+class LoginModel
 {
 	private $pdo;
 
